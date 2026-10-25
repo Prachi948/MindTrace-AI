@@ -1,3 +1,4 @@
+
 package com.mindtrace.mindtrace_backend.entity;
 
 import jakarta.persistence.*;
@@ -10,11 +11,13 @@ public class Module {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "title")
     private String title;
 
-    @Column(columnDefinition = "TEXT")
+    @Column(name = "description", columnDefinition = "TEXT")
     private String description;
 
+    @Column(name = "sequence_number")
     private Integer sequenceNumber;
 
     @ManyToOne(fetch = FetchType.LAZY)
